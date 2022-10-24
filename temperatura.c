@@ -1,63 +1,65 @@
 #include <string.h>
 #include <stdlib.h>
-
-void temperatura(char *temp)
+#include <stdio.h>
+int temperatura(char *temp)
 
 {
    int i;
+   int j;
    char *converted;
    char *tempnum2;
    int tempnum;
    
    i = strlen(temp);
+   j = 0;
    tempnum = 0;
    converted = malloc(sizeof(temp));
    tempnum2 = malloc(strlen(temp - 2));
    if (!tempnum2)
    {
-    return (NULL);
+    return (0);
    }
    if (!converted)
    {
-    return (NULL);
+    return (0);
    }
 
-   if (temp[i - 1] != "C" || temp[i - 1] != 'F')
+   if (temp[i - 1] != 'C' || temp[i - 1] != 'F')
     {
     printf("Error");
-    }s
-    else if (temp[i - 2] != 'º')
+    }
+    else if (temp[i - 2] != "º")
     {
         printf("Error");
     }
     else
     {
-        if (temp[i - 1] == "C")
+        if (temp[i - 1] == 'C')
             {
-                while (temp[i] != 'º')
+                while (temp[j] != 'º')
                 {
-                    tempnum2[i] = temp[i];
-                    tempnum = tempnum2 - '0';
+                    tempnum2[j] = temp[j];
+                    tempnum = atoi(tempnum2);
                     printf("Su temperatura en Celsius es:");
-                    printf("%d", ((tempnum * 1.8) + 32));
+                    printf("%f", ((tempnum * 1.8) + 32));
                     printf("ºC");
                 }
             }
-        if (temp[i - 1] == "F")
+        if (temp[i - 1] == 'F')
             {
-                while (temp[i] != 'º')
+                while (temp[j] != "º")
                 {
-                    tempnum2[i] = temp[i];
-                    tempnum = tempnum2 - '0';
+                    tempnum2[j] = temp[j];
+                    tempnum = atoi(tempnum2);
                     printf("Su temperatura en Farenheit es:"); 
-                    printf("%d", ((tempnum - 32) * 0.5556));
+                    printf("%f", ((tempnum - 32) * 0.5556));
                     printf("ºF");
                 }
             }
     }
 }
 
-void main (int argc, char **argv)
+int main (int argc, char **argv)
 
 {
     if (argc > 2)
