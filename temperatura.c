@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-int temperatura(char *temp)
+int temperature(char *temp)
 
 {
    int i;
@@ -74,7 +74,7 @@ int main (int argc, char **argv)
 	}
     else
     {
-        temperatura(argv[1]);
+        temperature(argv[1]);
 		return 0;
     }
 }
