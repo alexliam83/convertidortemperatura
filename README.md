@@ -13,4 +13,7 @@ descartar este requisito.
 Por lo demas he hecho el programa para que introduzcamos vía argumentos la temperatura que queremos convertir seguido de la unidad, por ejemplo 15C o 75F
 y el programa devuelve la temperatura convertida.
 
+Hay que tener en cuenta que en el proyecto he usado funciones como strlen o atoi de las que yo ya he realizado mis propias versiones en el proyecto
+libft de 42, pero buscando la simplicidad he optado por usar las oficiales.
+
 Posiblemente se podría hacer mejor o usando otra fórmula pero esta es la que se me ha ocurrido a mi y acepto cualquier consejo para mejorar el código.
